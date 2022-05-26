@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 19:13:06 by cmorales          #+#    #+#             */
-/*   Updated: 2022/05/26 18:40:51 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/05/26 19:02:14 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	ft_printf(char const *str, ...)
 		if (*str == '%')
 		{
 			str++;
+			if (*str == 'c')
+				ft_putchar_fd(va_arg(arglist, int),1);
 			if (*str == 's')
 				ft_putstr_fd(va_arg(arglist, char *),1, count);
 			if (*str == '%')
@@ -43,6 +45,6 @@ int	ft_printf(char const *str, ...)
 
 int	main()
 {
-	ft_printf("hola buenas tardes %d", 1234);
+	ft_printf("hola buenas tardes %c",'c');
 	return (0);
 }
