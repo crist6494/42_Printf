@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 19:36:03 by cmorales          #+#    #+#             */
-/*   Updated: 2022/05/26 17:35:21 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/05/28 10:22:26 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 #include "./libft/libft.h"
 
 int	ft_printf(char const *str, ...);
+int	ft_select(char const *str, va_list alist, int tc);
 
 #endif

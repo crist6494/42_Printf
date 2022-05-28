@@ -5,46 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/25 19:13:06 by cmorales          #+#    #+#             */
-/*   Updated: 2022/05/26 19:02:14 by cmorales         ###   ########.fr       */
+/*   Created: 2022/05/28 11:32:01 by cmorales          #+#    #+#             */
+/*   Updated: 2022/05/28 11:48:37 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "printf.h"
+
+int	ft_select(char const *str, va_list alist, int tc)
+{
+	if (*str == 'c')
+	{
+		ft_putchar_fd(va_arg(alist, int),1);
+		tc++;
+	}
+	else if (*str == 's')
+		tc = ft_putstr_fd(va_arg(alist, char *),1, tc);
+	//else if (*str == 'p')
+	
+	else if (*str == 'd' || *str == 'i')
+		tc = ft_putnbr_fd(va_arg(alist, int),1, tc);
+	else if (*str == 'u')
+		tc =ft_putnbr_fd(va_arg(alist, unsigned int), 1, tc);
+	else if (*str == '%')
+	{
+		ft_putchar_fd('%', 1);
+		tc++;
+	}
+	return (tc);
+}
 
 int	ft_printf(char const *str, ...)
 {
-	int	count = 0;
+	int	tc = 0;
 	
-	va_list arglist;
-	va_start(arglist, str);
+	va_list alist;
+	va_start(alist, str);
 	while(*str)
 	{
 		if (*str == '%')
 		{
 			str++;
-			if (*str == 'c')
-				ft_putchar_fd(va_arg(arglist, int),1);
-			if (*str == 's')
-				ft_putstr_fd(va_arg(arglist, char *),1, count);
-			if (*str == '%')
-				ft_putchar_fd('%', 1);
-			if (*str == 'd')
-				ft_putnbr_fd(va_arg(arglist, int),1);
+			ft_select(str, alist, tc);
 		}
 		else
 		{
 			ft_putchar_fd(*str, 1);
-			count++;
+			tc++;
 		}
 		str++;
 	}
-	va_end(arglist);
-	return (count);	
+	va_end(alist);
+	return (tc);	
 }
 
 int	main()
 {
-	ft_printf("hola buenas tardes %c",'c');
+	ft_printf("Muestra un caracter = %c\nMuestra un string = %s\nMuestra un porcentaje = %%\nMuestra número decimal = %d\nMuestra un entero de base 10 = %i\n ",'c', "El mamporrero", '%', 8, 9);
+	printf("\n\nMuestra un caracter = %c\nMuestra un string = %s\nMuestra un porcentaje = %%\nMuestra número decimal = %d\nMuestra un entero de base 10 = %i\n ",'c', "El mamporrero", '%', 8, 9);
 	return (0);
 }
