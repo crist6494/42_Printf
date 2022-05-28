@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:32:01 by cmorales          #+#    #+#             */
-/*   Updated: 2022/05/28 12:13:08 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/05/28 12:14:16 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_printf(char const *str, ...)
 
 int	main()
 {
-	ft_printf("Muestra un cdddaracter = %c\nMuestra un string = %s\nMuestra un porcentaje = %%\nMuestra número decimal = %d\nMuestra un entero de base 10 = %i\n ",'c', "El mamporrero", '%', 8, 9);
+	ft_printf("Muestra un caracter = %c\nMuestra un string = %s\nMuestra un porcentaje = %%\nMuestra número decimal = %d\nMuestra un entero de base 10 = %i\n ",'c', "El mamporrero", '%', 8, 9);
 	printf("\n\nMuestra un caracter = %c\nMuestra un string = %s\nMuestra un porcentaje = %%\nMuestra número decimal = %d\nMuestra un entero de base 10 = %i\n ",'c', "El mamporrero", '%', 8, 9);
 	return (0);
 }
