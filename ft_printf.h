@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 19:36:03 by cmorales          #+#    #+#             */
-/*   Updated: 2022/05/30 19:19:11 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/05/31 16:34:45 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 
 int		ft_printf(char const *str, ...);
 int		ft_select(char const *str, va_list alist, int tc);
-int		check_decimal(int pos, int tc);
-int		check_lower_hexa(int pos, int tc);
-int		check_upper_hexa(int pos, int tc);
-int		void_hexa(int pos, int tc, int boolean);
+int		check_decimal(unsigned int pos, int tc);
+int		check_lower_hexa(unsigned int pos, int tc);
+int		check_upper_hexa(unsigned int pos, int tc);
+int		void_hexa(unsigned long pos, int tc, int boolean);
 int		ft_putstr_fd(char *s, int fd, int tc);
 void	ft_putchar_fd(char c, int fd);
 int		ft_putnbr_fd(int n, int fd, int tc);

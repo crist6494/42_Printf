@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:43:47 by cmorales          #+#    #+#             */
-/*   Updated: 2022/05/30 19:36:01 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/05/31 18:29:33 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,25 @@ int	ft_putnbr_fd(int n, int fd, int tc)
 {
 	if (n == -2147483648)
 	{
-		write (fd, "-2147483648", 11);
-		return (tc += 11);
+		tc = ft_putstr_fd("-2147483648", fd, tc);
 	}
 	else if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd, tc);
 		tc++;
+		tc = ft_putnbr_fd(-n, fd, tc);
 	}
 	else if (n > 9)
 	{
-		ft_putnbr_fd(n / 10, fd, tc);
-		ft_putnbr_fd(n % 10, fd, tc);
+		tc = ft_putnbr_fd(n / 10, fd, tc);
+		ft_putchar_fd((n % 10) + '0', fd);
+		tc++;
 	}
 	else
+	{
 		ft_putchar_fd(n + '0', fd);
 		tc++;
+	}
 	return (tc);
 }
 

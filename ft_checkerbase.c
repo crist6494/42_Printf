@@ -6,13 +6,13 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 12:44:14 by cmorales          #+#    #+#             */
-/*   Updated: 2022/05/30 19:51:10 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/05/31 17:49:01 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	check_decimal(int pos, int tc)
+int	check_decimal(unsigned int pos, int tc)
 {
 	char	*numbers;
 
@@ -30,7 +30,7 @@ int	check_decimal(int pos, int tc)
 	return (tc);
 }
 
-int	check_lower_hexa(int pos, int tc)
+int	check_lower_hexa(unsigned int pos, int tc)
 {
 	char	*numbers;
 
@@ -48,7 +48,7 @@ int	check_lower_hexa(int pos, int tc)
 	return (tc);
 }
 
-int	check_upper_hexa(int pos, int tc)
+int	check_upper_hexa(unsigned int pos, int tc)
 {
 	char	*numbers;
 
@@ -66,7 +66,7 @@ int	check_upper_hexa(int pos, int tc)
 	return (tc);
 }
 
-int	void_hexa(int pos, int tc, int boolean)
+int	void_hexa(unsigned long pos, int tc, int boolean)
 {
 	char	*numbers;
 
@@ -78,8 +78,8 @@ int	void_hexa(int pos, int tc, int boolean)
 	}
 	if (pos >= 16)
 	{
-		tc = void_hexa(pos / 16, tc, -1);
-		tc = void_hexa(pos % 16, tc, -1);
+		tc = void_hexa(pos / 16, tc, 0);
+		tc = void_hexa(pos % 16, tc, 0);
 	}
 	else
 	{
