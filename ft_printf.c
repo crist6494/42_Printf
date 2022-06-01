@@ -6,7 +6,7 @@
 /*   By: cmorales <moralesrojascr@gmail.com>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/28 11:32:01 by cmorales          #+#    #+#             */
-/*   Updated: 2022/05/31 19:05:24 by cmorales         ###   ########.fr       */
+/*   Updated: 2022/06/01 17:45:36 by cmorales         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	ft_printf(char const *str, ...)
 {
 	void *a;
 
-	a = (void *)12;
+	a = (void *)42;
 	
     ft_printf("Muestra un caracter = %c\n \
 Muestra un string = %s\n \
@@ -82,7 +82,7 @@ Muestra un número hexadecimal en minuscula = %x\n \
 Muestra un número hexadecimal en mayúscula = %X\n \
 Muestra un puntero *void imprimido en hezadecimal = %p\n" \
 
-,'c', "El mamporrero",  -16, 9, -45, 12, 12, a); \
+,'c', "El mamporrero",  -16, 9, -45, 42, 42, a); \
     
     printf("Muestra un caracter = %c\n \
 Muestra un string = %s\n \
@@ -94,5 +94,5 @@ Muestra un número hexadecimal en minuscula = %x\n \
 Muestra un número hexadecimal en mayúscula = %X\n \
 Muestra un puntero *void imprimido en hezadecimal = %p\n" \
 
-,'c', "El mamporrero",  -16, 9, -45, 12, 12, a); \
+,'c', "El mamporrero",  -16, 9, -45, 42, 42, a); \
 }   */
